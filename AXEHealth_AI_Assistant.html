@@ -563,7 +563,7 @@ async function sendMessage() {
   showTyping();
 
   try {
-    const response = await fetch('https://axehealth-proxy.ajay-varrierakv.workers.dev/', {
+    const response = await fetch('https://axehealth-proxy.ajay-varrierakv.workers.dev', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
