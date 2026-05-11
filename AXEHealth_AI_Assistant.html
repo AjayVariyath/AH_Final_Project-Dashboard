@@ -365,6 +365,10 @@
   <button class="quick-btn" onclick="sendQuick('Explain what MPI means and why it matters')">📖 What is MPI?</button>
   <button class="quick-btn" onclick="sendQuick('What does Long Call Ratio tell us?')">📞 Call quality</button>
   <button class="quick-btn" onclick="sendQuick('What are the key recommendations from the forecast?')">🔮 Recommendations</button>
+  <button class="quick-btn" onclick="sendQuick('Which doctors are most engaged across all territories?')">👨‍⚕️ Top doctors</button>
+  <button class="quick-btn" onclick="sendQuick('Which doctors in TERR307 need better quality engagement?')">🎯 TERR307 doctors</button>
+  <button class="quick-btn" onclick="sendQuick('Tell me about Dr S across all territories')">🔍 Dr S profile</button>
+  <button class="quick-btn" onclick="sendQuick('Which doctors should I prioritise for long calls in TERR305?')">📋 Priority HCPs</button>
 </div>
 
 <div class="messages" id="messages">
@@ -373,7 +377,7 @@
     <div class="bubble ai">
       <div class="welcome">
         <div class="welcome-title">👋 Hello! I'm your AXEHealth Analytics Assistant.</div>
-        I have full context about the VIC/SA/TAS sales dashboard — including territory performance, call activity, market penetration data, and the 2026 forecast. Ask me anything about the data, or use the quick questions above to get started.
+        I have full context about the VIC/SA/TAS sales dashboard — including territory performance, call activity, market penetration data, the 2026 forecast, and <strong>doctor-level engagement data for all 26 HCPs</strong>. Ask me about a specific doctor, territory HCP patterns, or any dashboard metric. Use the quick questions above to get started.
       </div>
     </div>
   </div>
@@ -462,21 +466,112 @@ DATA LIMITATIONS TO BE AWARE OF:
 - Only 4 months overlap between call and sales data (Sep-Dec 2025)
 - 2026 forecast is total market, not Brand 1 specific
 
+DOCTOR-LEVEL DATA (HCP ENGAGEMENT):
+There are 26 unique doctors (HCPs) visited across all territories. Doctor names are anonymised as Dr A through Dr Z. Each doctor may be visited by multiple territories. All doctors are primarily General Practice unless noted otherwise.
+
+OVERALL TOP DOCTORS BY TOTAL CALLS:
+Dr S: 554 total calls | 287 long calls | LC Ratio 51.8% | visited by all 6 territories
+Dr A: 477 total calls | 224 long calls | LC Ratio 47.0% | visited by all 6 territories
+Dr M: 470 total calls | 208 long calls | LC Ratio 44.3% | visited by all 6 territories
+Dr J: 239 total calls | 125 long calls | LC Ratio 52.3% | visited by all 6 territories
+Dr P: 194 total calls | 109 long calls | LC Ratio 56.2% | visited by all 6 territories
+Dr D: 185 total calls | 79 long calls  | LC Ratio 42.7% | visited by all 6 territories
+Dr N: 181 total calls | 80 long calls  | LC Ratio 44.2% | visited by all 6 territories
+Dr R: 180 total calls | 91 long calls  | LC Ratio 50.6% | visited by all 6 territories
+Dr T: 159 total calls | 74 long calls  | LC Ratio 46.5% | visited by all 6 territories
+Dr C: 155 total calls | 67 long calls  | LC Ratio 43.2% | visited by all 6 territories
+
+DOCTOR ENGAGEMENT BY TERRITORY:
+
+TERR301 doctors:
+Dr S: 83 calls | 56 long | LC Ratio 67.5% — most visited, high quality
+Dr M: 73 calls | 43 long | LC Ratio 58.9%
+Dr A: 72 calls | 55 long | LC Ratio 76.4% — highest LC ratio in territory
+Dr T: 38 calls | 25 long | LC Ratio 65.8%
+Dr R: 34 calls | 20 long | LC Ratio 58.8%
+Dr P: 33 calls | 21 long | LC Ratio 63.6%
+Dr J: 32 calls | 21 long | LC Ratio 65.6%
+Dr V: 15 calls | 13 long | LC Ratio 86.7% — highest LC ratio overall in TERR301
+Dr Y: 15 calls | 13 long | LC Ratio 86.7%
+Dr E: 15 calls | 12 long | LC Ratio 85.7%
+
+TERR302 doctors:
+Dr S: 95 calls | 51 long | LC Ratio 53.7% — most visited
+Dr M: 83 calls | 37 long | LC Ratio 44.6%
+Dr A: 73 calls | 30 long | LC Ratio 41.1%
+Dr D: 42 calls | 12 long | LC Ratio 28.6% — low quality engagement
+Dr J: 41 calls | 19 long | LC Ratio 46.3%
+Dr K: 34 calls | 16 long | LC Ratio 47.1%
+Dr P: 37 calls | 25 long | LC Ratio 67.6% — best LC ratio for volume
+Dr R: 37 calls | 20 long | LC Ratio 54.1%
+
+TERR303 doctors:
+Dr S: 96 calls | 54 long | LC Ratio 56.2% — most visited
+Dr A: 77 calls | 37 long | LC Ratio 48.1%
+Dr M: 70 calls | 37 long | LC Ratio 52.9%
+Dr P: 38 calls | 28 long | LC Ratio 73.7% — highest LC ratio
+Dr J: 38 calls | 25 long | LC Ratio 65.8%
+Dr R: 26 calls | 12 long | LC Ratio 46.2%
+Dr N: 23 calls | 13 long | LC Ratio 56.5%
+Dr W: 7 calls  | 7 long  | LC Ratio 100% — all calls are long calls
+
+TERR305 doctors:
+Dr S: 110 calls | 39 long | LC Ratio 35.5% — most visited but low quality
+Dr A: 100 calls | 41 long | LC Ratio 41.0%
+Dr M: 92 calls  | 34 long | LC Ratio 37.0%
+Dr J: 42 calls  | 16 long | LC Ratio 38.1%
+Dr D: 35 calls  | 13 long | LC Ratio 37.1%
+Dr N: 22 calls  | 5 long  | LC Ratio 22.7% — very low quality
+Dr E: 22 calls  | 4 long  | LC Ratio 18.2% — very low quality
+Note: TERR305 has consistently low LC ratios across all doctors — systemic quality issue
+
+TERR306 doctors:
+Dr A: 84 calls  | 49 long | LC Ratio 58.3%
+Dr S: 74 calls  | 52 long | LC Ratio 70.3% — high quality engagement
+Dr M: 66 calls  | 32 long | LC Ratio 48.5%
+Dr J: 39 calls  | 29 long | LC Ratio 74.4% — highest LC ratio
+Dr D: 38 calls  | 25 long | LC Ratio 65.8%
+Dr N: 35 calls  | 22 long | LC Ratio 62.9%
+Dr R: 24 calls  | 19 long | LC Ratio 79.2% — excellent quality
+Dr E: 11 calls  | 10 long | LC Ratio 90.9% — best LC ratio in territory
+
+TERR307 doctors:
+Dr S: 96 calls | 35 long | LC Ratio 36.5% — most visited but low quality
+Dr M: 86 calls | 25 long | LC Ratio 29.1% — very low quality
+Dr A: 71 calls | 12 long | LC Ratio 16.9% — lowest LC ratio across all territories
+Dr C: 49 calls | 12 long | LC Ratio 24.5%
+Dr J: 47 calls | 15 long | LC Ratio 31.9%
+Note: TERR307 consistently low LC ratios — highest call volume but poorest engagement quality
+
+SPECIALIST DOCTORS (non-GP):
+Dr A (TERR305): Gastroenterology and Hepatology — 1 call
+Dr D (TERR302, TERR303): General Medicine — 4 calls total
+Dr H (TERR307): Psychiatry — 1 call
+Dr M (TERR307): Nutrition — 3 calls, Obstetrics & Gynaecology — 1 call
+Dr N (TERR307): Endocrinology, Diabetes & Metabolism — 1 call, Psychiatry — 2 calls
+Dr W (TERR306): Emergency Medicine — 1 call
+Dr Z (TERR305): Hospital Pharmacy — 1 call
+
+DOCTOR DRILLDOWN GUIDANCE:
+When asked about a specific doctor (e.g. "tell me about Dr A in TERR301"), provide:
+1. Total calls and LC ratio for that doctor in that territory
+2. How their LC ratio compares to the territory average
+3. What call type mix they receive (long vs OTC)
+4. Whether they are being engaged at the right quality level
+5. A recommended action (e.g. increase long calls, maintain current approach, prioritise catering events)
+
+When asked "which doctors need more attention in TERR307" — identify those with low LC ratios (Dr A at 16.9%, Dr M at 29.1%) and recommend shifting from OTC to long call engagement.
+
 RESPONSE GUIDELINES:
 - Be concise and direct - this is a business dashboard, not an essay
 - Use specific numbers from the data above when answering
 - Format responses clearly with short paragraphs or bullet points
-- When summarising a territory, mention only the single most important metric and one key insight
+- When summarising a territory, always mention: Revenue, Market Share, Long Call Ratio, and key insight
 - Highlight what action the rep should take where relevant
 - If asked about something not in the data, say so clearly
 - Use $ formatting for revenue, % for ratios
-- Keep ALL responses under 80 words maximum — be concise and punchy
-- Lead with the single most important insight only
-- Use maximum 2-3 bullet points if listing items
-- Never give full breakdowns unless the user explicitly asks "give me details" or "tell me more"
-- If the user wants more detail they will ask — default to brief summaries only
-- Tone: analytical, helpful - like a smart analytics colleague
-- Your accent must be like a North Queenslander bogan, but no swear words. Use funny jargon and Aussie references` ;
+- Keep responses under 200 words unless a detailed breakdown is specifically requested
+- Tone: professional, analytical, helpful - like a smart analytics colleague`;
 
 let messages = [];
 let isLoading = false;
@@ -572,7 +667,7 @@ async function sendMessage() {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        model: 'claude-haiku-4-5-20251001',
+        model: 'claude-sonnet-4-20250514',
         max_tokens: 1000,
         system: SYSTEM_PROMPT,
         messages: messages
