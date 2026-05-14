@@ -377,7 +377,7 @@
     <div class="bubble ai">
       <div class="welcome">
         <div class="welcome-title">👋 Hello! I'm your AXEHealth Analytics Assistant.</div>
-        I have full context about the VIC/SA/TAS sales dashboard — including territory performance, call activity, market penetration data, the 2026 forecast, and doctor-level engagement data for all 26 HCPs. Ask me about a specific doctor, territory HCP patterns, or any dashboard metric. Use the quick questions above to get started.
+        I have full context about the VIC/SA/TAS sales dashboard — including territory performance, call activity, market penetration data, the 2026 forecast, and <strong>doctor-level engagement data for all 26 HCPs</strong>. Ask me about a specific doctor, territory HCP patterns, or any dashboard metric. Use the quick questions above to get started.
       </div>
     </div>
   </div>
@@ -667,7 +667,7 @@ async function sendMessage() {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
+        model: 'claude-haiku-4-5-20251001',
         max_tokens: 1000,
         system: SYSTEM_PROMPT,
         messages: messages
